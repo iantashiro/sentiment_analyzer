@@ -8,7 +8,7 @@
 
 In today's competitive e-commerce landscape, understanding customer feedback at scale is crucial for business success. Companies receive thousands of reviews, making it impossible for teams to manually read and categorize them efficiently. This leads to missed opportunities, delayed responses to critical issues, and a poor understanding of customer satisfaction.
 
-This project solves this problem by providing an intelligent, automated service that empowers business teams by:
+This project tackles this challenge by demonstrating an end-to-end solution: an intelligent, automated service designed to empower business teams by:
 
 - **Delivering immediate, data-driven insights** from thousands of customer reviews, eliminating the need for manual analysis.
 - **Providing a quantitative overview** with statistically sound metrics like average score and total review count.
