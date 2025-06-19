@@ -60,7 +60,7 @@ When a user makes a request to the `/analyze_sentiment` endpoint, the following 
 
 Run the following to process data and populate ChromaDB:
 ```bash
-python process_data.py
+python main.py
 ```
 
 ## Running the API
