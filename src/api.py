@@ -6,7 +6,6 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from fastapi import FastAPI, HTTPException
-import os
 import json
 from src.sentiment_analyzer import sentiment_analyzer, configure_gemini
 from src.database import get_chromadb_client, get_or_create_collection
