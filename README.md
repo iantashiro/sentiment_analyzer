@@ -69,12 +69,3 @@ Start the FastAPI server:
 ```bash
 python src/api.py
 ```
-
-## API Testing
-
-- By default, open [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) in your browser for interactive Swagger documentation.
-- If you change the port when running the API, adjust the link accordingly (e.g., `http://127.0.0.1:9000/docs`).
-- Example endpoint:
-  ```
-  GET /analyze_sentiment?product_id=YOUR_PRODUCT_ID
-  ```
