@@ -31,15 +31,6 @@ def compute_product_stats(df_complete, output_path="data/product_stats.json"):
         json.dump(stats_dict, f, ensure_ascii=False, indent=4)
     return stats_dict
 
-def filter_reviews(df_complete, min_reviews=10):
-    """Filter products with at least min_reviews and sort by average score ascending."""
-    product_stats = df_complete.groupby('product_id').agg(
-        average_score=('review_score', 'mean'),
-        review_count=('review_id', 'nunique')
-    ).reset_index()
-    filtered = product_stats[product_stats['review_count'] >= min_reviews].sort_values('average_score', ascending=True)
-    return filtered
-
 def prepare_review_texts(df_complete):
     """Prepare DataFrame with combined review text for embedding."""
     cols_interest = ['product_id', 'review_score', 'review_comment_title', 'review_comment_message', 'review_creation_date']
