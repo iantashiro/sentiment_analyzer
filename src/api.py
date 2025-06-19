@@ -6,6 +6,7 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from fastapi import FastAPI, HTTPException
+import os
 import json
 from src.sentiment_analyzer import sentiment_analyzer, configure_gemini
 from src.database import get_chromadb_client, get_or_create_collection
@@ -47,6 +48,12 @@ async def analyze_sentiment_endpoint(product_id: str):
 
 if __name__ == "__main__":
     import uvicorn
-    print("API running at: http://127.0.0.1:8000")
-    print("Swagger docs:   http://127.0.0.1:8000/docs")
-    uvicorn.run("src.api:app", host="127.0.0.1", port=8000, reload=True)
+    from pyngrok import ngrok
+    from dotenv import load_dotenv
+    load_dotenv()
+    NGROK_AUTH_TOKEN = os.getenv('NGROK_AUTH_TOKEN')
+    ngrok.set_auth_token(NGROK_AUTH_TOKEN)
+    public_url_object = ngrok.connect(8000)
+    print(f"API running at: {public_url_object.public_url}")
+    print(f"Swagger docs:   {public_url_object.public_url}/docs")
+    uvicorn.run("src.api:app", host="0.0.0.0", port=8000, reload=True)
