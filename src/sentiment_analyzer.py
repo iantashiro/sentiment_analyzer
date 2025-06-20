@@ -49,7 +49,7 @@ def sentiment_analyzer(product_id, collection, model, product_stats_data, llm_mo
 Você é um especialista em análise de marketing e reviews de produtos. Sua tarefa é analisar um conjunto
  de avaliações de clientes para um produto escolhido.
 
-A nota média das avaliações deste produto é {stats.get('average_score', 0.0)} (de 5).
+A nota média das avaliações deste produto é {stats.get('average_score', 'N/A')} (de 1 a 5).
 Cada avaliação está acompanhada de sua respectiva nota (de 1 a 5). Considere tanto a nota média quanto o 
 texto e a nota individual de cada avaliação para classificar o sentimento geral de forma equilibrada, 
 refletindo a percepção real dos clientes.
